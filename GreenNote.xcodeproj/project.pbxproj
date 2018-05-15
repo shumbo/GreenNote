@@ -12,6 +12,7 @@
 		247D0BDC20AAC7E700F73900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDA20AAC7E700F73900 /* Main.storyboard */; };
 		247D0BDE20AAC7E900F73900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDD20AAC7E900F73900 /* Assets.xcassets */; };
 		247D0BE120AAC7E900F73900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDF20AAC7E900F73900 /* LaunchScreen.storyboard */; };
+		247D0BEF20AACD4E00F73900 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247D0BEE20AACD4E00F73900 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		247D0BDD20AAC7E900F73900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		247D0BE020AAC7E900F73900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		247D0BE220AAC7E900F73900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		247D0BE920AACCE600F73900 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
+		247D0BEC20AACD4500F73900 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		247D0BEE20AACD4E00F73900 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				247D0BEF20AACD4E00F73900 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				247D0BD520AAC7E700F73900 /* GreenNote */,
 				247D0BD420AAC7E700F73900 /* Products */,
+				247D0BE820AACCE600F73900 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +70,16 @@
 			path = GreenNote;
 			sourceTree = "<group>";
 		};
+		247D0BE820AACCE600F73900 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				247D0BEE20AACD4E00F73900 /* RxSwift.framework */,
+				247D0BEC20AACD4500F73900 /* RxSwift.framework.dSYM */,
+				247D0BE920AACCE600F73900 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +90,7 @@
 				247D0BCF20AAC7E700F73900 /* Sources */,
 				247D0BD020AAC7E700F73900 /* Frameworks */,
 				247D0BD120AAC7E700F73900 /* Resources */,
+				247D0BEB20AACD2300F73900 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,6 +146,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		247D0BEB20AACD2300F73900 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		247D0BCF20AAC7E700F73900 /* Sources */ = {
@@ -282,6 +315,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GreenNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +337,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TKVMG44U5W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GreenNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
