@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240874B520AB1978004F0138 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240874B420AB1978004F0138 /* Constants.swift */; };
 		247D0BD720AAC7E700F73900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D0BD620AAC7E700F73900 /* AppDelegate.swift */; };
 		247D0BDE20AAC7E900F73900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDD20AAC7E900F73900 /* Assets.xcassets */; };
 		247D0BE120AAC7E900F73900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDF20AAC7E900F73900 /* LaunchScreen.storyboard */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240874B420AB1978004F0138 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		247D0BD320AAC7E700F73900 /* GreenNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247D0BD620AAC7E700F73900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247D0BDD20AAC7E900F73900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,8 +50,10 @@
 		240874B120AADE92004F0138 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				240874B620AB1A1D004F0138 /* Scenes */,
 				240874B320AAEC43004F0138 /* Views */,
 				247D0BD620AAC7E700F73900 /* AppDelegate.swift */,
+				240874B420AB1978004F0138 /* Constants.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -67,6 +71,21 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		240874B620AB1A1D004F0138 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				240874B720AB1AA6004F0138 /* setup */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		240874B720AB1AA6004F0138 /* setup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = setup;
 			sourceTree = "<group>";
 		};
 		247D0BCA20AAC7E700F73900 = {
@@ -194,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				247D0BD720AAC7E700F73900 /* AppDelegate.swift in Sources */,
+				240874B520AB1978004F0138 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
