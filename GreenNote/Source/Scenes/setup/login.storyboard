@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n1z-hR-YbJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="eCt-l0-5ti">
+            <objects>
+                <navigationController id="n1z-hR-YbJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a9u-XA-9CJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="t9u-Mm-6Ex" kind="relationship" relationship="rootViewController" id="PbH-Za-A4h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOw-ye-79e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-775" y="241"/>
+        </scene>
+        <!--Login to Grammarly-->
+        <scene sceneID="4HW-D9-XU2">
+            <objects>
+                <viewController id="t9u-Mm-6Ex" customClass="LoginViewController" customModule="GreenNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R62-6s-y9i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N56-qP-o7B">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="N56-qP-o7B" firstAttribute="leading" secondItem="Drh-BD-6G5" secondAttribute="leading" id="G7j-MY-enh"/>
+                            <constraint firstItem="N56-qP-o7B" firstAttribute="bottom" secondItem="Drh-BD-6G5" secondAttribute="bottom" id="Wtz-uV-ZvE"/>
+                            <constraint firstItem="N56-qP-o7B" firstAttribute="top" secondItem="Drh-BD-6G5" secondAttribute="top" id="b6K-bs-ila"/>
+                            <constraint firstItem="N56-qP-o7B" firstAttribute="trailing" secondItem="Drh-BD-6G5" secondAttribute="trailing" id="u9i-tR-9wQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Drh-BD-6G5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login to Grammarly" id="YLw-Xm-bwg">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="TWR-Pr-hZS">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="t9u-Mm-6Ex" id="IkP-hv-Srp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loginWebView" destination="N56-qP-o7B" id="s7a-Nw-DXw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyf-55-0ks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="240.62968515742131"/>
+        </scene>
+    </scenes>
+</document>

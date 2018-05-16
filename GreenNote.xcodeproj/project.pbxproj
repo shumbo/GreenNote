@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		240874B520AB1978004F0138 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240874B420AB1978004F0138 /* Constants.swift */; };
+		240874B920AB1C71004F0138 /* welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240874B820AB1C71004F0138 /* welcome.storyboard */; };
+		240874BF20ABEB1A004F0138 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240874BE20ABEB1A004F0138 /* login.storyboard */; };
+		240874C120ABEB45004F0138 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240874C020ABEB45004F0138 /* LoginViewController.swift */; };
 		247D0BD720AAC7E700F73900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D0BD620AAC7E700F73900 /* AppDelegate.swift */; };
 		247D0BDE20AAC7E900F73900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDD20AAC7E900F73900 /* Assets.xcassets */; };
 		247D0BE120AAC7E900F73900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDF20AAC7E900F73900 /* LaunchScreen.storyboard */; };
@@ -16,6 +19,9 @@
 
 /* Begin PBXFileReference section */
 		240874B420AB1978004F0138 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		240874B820AB1C71004F0138 /* welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = welcome.storyboard; sourceTree = "<group>"; };
+		240874BE20ABEB1A004F0138 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		240874C020ABEB45004F0138 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		247D0BD320AAC7E700F73900 /* GreenNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247D0BD620AAC7E700F73900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247D0BDD20AAC7E900F73900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 		240874B620AB1A1D004F0138 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2411C70620AC692A00D35499 /* main */,
 				240874B720AB1AA6004F0138 /* setup */,
 			);
 			path = Scenes;
@@ -84,8 +91,18 @@
 		240874B720AB1AA6004F0138 /* setup */ = {
 			isa = PBXGroup;
 			children = (
+				240874BE20ABEB1A004F0138 /* login.storyboard */,
+				240874C020ABEB45004F0138 /* LoginViewController.swift */,
+				240874B820AB1C71004F0138 /* welcome.storyboard */,
 			);
 			path = setup;
+			sourceTree = "<group>";
+		};
+		2411C70620AC692A00D35499 /* main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 		247D0BCA20AAC7E700F73900 = {
@@ -184,8 +201,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240874BF20ABEB1A004F0138 /* login.storyboard in Resources */,
 				247D0BE120AAC7E900F73900 /* LaunchScreen.storyboard in Resources */,
 				247D0BDE20AAC7E900F73900 /* Assets.xcassets in Resources */,
+				240874B920AB1C71004F0138 /* welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,8 +217,10 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -212,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240874C120ABEB45004F0138 /* LoginViewController.swift in Sources */,
 				247D0BD720AAC7E700F73900 /* AppDelegate.swift in Sources */,
 				240874B520AB1978004F0138 /* Constants.swift in Sources */,
 			);
@@ -355,7 +377,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = GreenNote/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GreenNote/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,7 +400,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = GreenNote/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GreenNote/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
