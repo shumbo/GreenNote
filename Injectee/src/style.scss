@@ -1,0 +1,11 @@
+/* For top screen */
+
+// Enable smooth scrolling on document list
+[class$="-view"], [class*="-view "] {
+  -webkit-overflow-scrolling: touch;
+}
+
+// Hide message to install extension
+[data-name="extensionSafari"] {
+  display: none;
+}
