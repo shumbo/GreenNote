@@ -9,6 +9,14 @@
   -webkit-overflow-scrolling: touch;
 }
 
+// Adjust height
+#page {
+  overflow: hidden;
+}
+[class$="-main"], [class*="-main "] {
+  height: inherit;
+}
+
 // Hide message to install extension
 [data-name="extensionSafari"] {
   display: none;
