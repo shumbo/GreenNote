@@ -41,24 +41,34 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7Ck-WV-uHa">
+                                <rect key="frame" x="162" y="308.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5gk-De-PGO"/>
+                                    <constraint firstAttribute="height" constant="50" id="oxI-fp-DrD"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="N56-qP-o7B" firstAttribute="leading" secondItem="Drh-BD-6G5" secondAttribute="leading" id="G7j-MY-enh"/>
+                            <constraint firstItem="7Ck-WV-uHa" firstAttribute="centerY" secondItem="R62-6s-y9i" secondAttribute="centerY" id="Viv-8C-DkN"/>
                             <constraint firstItem="N56-qP-o7B" firstAttribute="bottom" secondItem="Drh-BD-6G5" secondAttribute="bottom" id="Wtz-uV-ZvE"/>
                             <constraint firstItem="N56-qP-o7B" firstAttribute="top" secondItem="Drh-BD-6G5" secondAttribute="top" id="b6K-bs-ila"/>
+                            <constraint firstItem="7Ck-WV-uHa" firstAttribute="centerX" secondItem="R62-6s-y9i" secondAttribute="centerX" id="hQJ-op-k7c"/>
                             <constraint firstItem="N56-qP-o7B" firstAttribute="trailing" secondItem="Drh-BD-6G5" secondAttribute="trailing" id="u9i-tR-9wQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Drh-BD-6G5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login to Grammarly" id="YLw-Xm-bwg">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="TWR-Pr-hZS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="TWR-Pr-hZS">
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="t9u-Mm-6Ex" id="IkP-hv-Srp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="7Ck-WV-uHa" id="sKT-tA-Wt8"/>
                         <outlet property="loginWebView" destination="N56-qP-o7B" id="s7a-Nw-DXw"/>
                     </connections>
                 </viewController>

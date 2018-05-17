@@ -12,6 +12,7 @@ import WebKit
 class LoginViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var loginWebView: WKWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         loginWebView.customUserAgent = Constants.UserAgent
         loginWebView.navigationDelegate = self
         loginWebView.load(URLRequest(url: URL(string: "https://www.grammarly.com/signin")!))
+        
+        activityIndicator.hidesWhenStopped = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,9 +35,20 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         self.parent?.dismiss(animated: true, completion: nil)
     }
     
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicator.startAnimating()
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
+    
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         if webView.url?.absoluteString == "https://app.grammarly.com/" {
             self.parent?.dismiss(animated: true, completion: nil)
+            UserDefaults.standard.set(true, forKey: Constants.Defaults.isLoggedIn.rawValue)
+            let mainSB = UIStoryboard(name: "main", bundle: nil)
+            guard let vc = mainSB.instantiateInitialViewController() else { return }
+            UIApplication.shared.keyWindow?.rootViewController = vc
         }
     }
 }

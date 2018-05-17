@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gvI-DD-2T8">
+    <device id="ipad10_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="EHm-73-sPs">
+            <objects>
+                <viewController id="lZN-IH-WZL" customClass="MainViewController" customModule="GreenNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a41-DJ-9Ub">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89x-vd-zdK">
+                                <rect key="frame" x="0.0" y="64" width="1112" height="770"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="89x-vd-zdK" firstAttribute="top" secondItem="xEh-Sc-7Px" secondAttribute="top" id="OQL-pO-e1C"/>
+                            <constraint firstItem="89x-vd-zdK" firstAttribute="trailing" secondItem="xEh-Sc-7Px" secondAttribute="trailing" id="TyU-jO-e6N"/>
+                            <constraint firstItem="89x-vd-zdK" firstAttribute="leading" secondItem="xEh-Sc-7Px" secondAttribute="leading" id="UMz-6c-EYY"/>
+                            <constraint firstItem="89x-vd-zdK" firstAttribute="bottom" secondItem="xEh-Sc-7Px" secondAttribute="bottom" id="wT2-KT-2PR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xEh-Sc-7Px"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eTP-9t-HbT">
+                        <barButtonItem key="leftBarButtonItem" image="Info" style="plain" id="WSL-be-cyT"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Asx-JJ-Akf"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webview" destination="89x-vd-zdK" id="Kg1-hJ-3LO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="775-B7-uvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="680.93525179856113" y="201.43884892086334"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1gN-4W-Emq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gvI-DD-2T8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N0f-ep-z2B">
+                        <rect key="frame" x="0.0" y="20" width="1112" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lZN-IH-WZL" kind="relationship" relationship="rootViewController" id="ing-Xa-vDD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwY-Zg-OVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33.453237410071942" y="201.43884892086334"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Info" width="24" height="24"/>
+    </resources>
+</document>
