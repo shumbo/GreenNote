@@ -16,23 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="a41-DJ-9Ub">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89x-vd-zdK">
-                                <rect key="frame" x="0.0" y="64" width="1112" height="770"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="89x-vd-zdK" firstAttribute="top" secondItem="xEh-Sc-7Px" secondAttribute="top" id="OQL-pO-e1C"/>
-                            <constraint firstItem="89x-vd-zdK" firstAttribute="trailing" secondItem="xEh-Sc-7Px" secondAttribute="trailing" id="TyU-jO-e6N"/>
-                            <constraint firstItem="89x-vd-zdK" firstAttribute="leading" secondItem="xEh-Sc-7Px" secondAttribute="leading" id="UMz-6c-EYY"/>
-                            <constraint firstItem="89x-vd-zdK" firstAttribute="bottom" secondItem="xEh-Sc-7Px" secondAttribute="bottom" id="wT2-KT-2PR"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xEh-Sc-7Px"/>
                     </view>
                     <navigationItem key="navigationItem" id="eTP-9t-HbT">
@@ -40,7 +24,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Asx-JJ-Akf"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="webview" destination="89x-vd-zdK" id="Kg1-hJ-3LO"/>
+                        <outlet property="shareButton" destination="Asx-JJ-Akf" id="kUx-mx-vgv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="775-B7-uvc" userLabel="First Responder" sceneMemberID="firstResponder"/>

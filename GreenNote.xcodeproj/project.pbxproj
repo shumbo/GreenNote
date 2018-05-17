@@ -17,6 +17,7 @@
 		247D0BDE20AAC7E900F73900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDD20AAC7E900F73900 /* Assets.xcassets */; };
 		247D0BE120AAC7E900F73900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDF20AAC7E900F73900 /* LaunchScreen.storyboard */; };
 		247D0BEF20AACD4E00F73900 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247D0BEE20AACD4E00F73900 /* RxSwift.framework */; };
+		24F43B5820AD2D7200E50F41 /* bundle.js in Resources */ = {isa = PBXBuildFile; fileRef = 24F43B5720AD2D7200E50F41 /* bundle.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		247D0BE920AACCE600F73900 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
 		247D0BEC20AACD4500F73900 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
 		247D0BEE20AACD4E00F73900 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		24F43B5720AD2D7200E50F41 /* bundle.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = bundle.js; path = Injectee/dist/bundle.js; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		240874B020AADA09004F0138 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24F43B5720AD2D7200E50F41 /* bundle.js */,
 				247D0BDF20AAC7E900F73900 /* LaunchScreen.storyboard */,
 				247D0BE220AAC7E900F73900 /* Info.plist */,
 			);
@@ -209,6 +212,7 @@
 			files = (
 				2411C70820AC6AAF00D35499 /* main.storyboard in Resources */,
 				240874BF20ABEB1A004F0138 /* login.storyboard in Resources */,
+				24F43B5820AD2D7200E50F41 /* bundle.js in Resources */,
 				247D0BE120AAC7E900F73900 /* LaunchScreen.storyboard in Resources */,
 				247D0BDE20AAC7E900F73900 /* Assets.xcassets in Resources */,
 				240874B920AB1C71004F0138 /* welcome.storyboard in Resources */,
