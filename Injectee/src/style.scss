@@ -1,10 +1,12 @@
 /* For top screen */
 
+$navWidth: 250px;
+
 // Enable smooth scrolling on document list
 [class$="-view"], [class*="-view "] {
   position: relative;
-  left: 300px;
-  width: calc(100% - 300px);
+  left: $navWidth;
+  width: calc(100% - #{$navWidth});
   padding-left: 0;
   -webkit-overflow-scrolling: touch;
 }
@@ -13,8 +15,15 @@
 #page {
   overflow: hidden;
 }
-[class$="-main"], [class*="-main "] {
+[class$="-main"], [class*="-main "]:not([data-name="editor-main-menu"]) {
   height: inherit;
+}
+
+[class$="-main"], [class*="-main "][data-name="editor-main-menu"] {
+  padding-left: 30px;
+}
+[class$="-nav"], [class*="-nav "] {
+  width: $navWidth;
 }
 
 [class$="-apps"], [class*="-apps "] {
