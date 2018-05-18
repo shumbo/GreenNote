@@ -28,7 +28,6 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         loginWebView.customUserAgent = Constants.UserAgent
         loginWebView.navigationDelegate = self
         
-        print(self.mode)
         loginWebView.load(URLRequest(url: URL(string: mode.rawValue)!))
         
         activityIndicator.hidesWhenStopped = true
