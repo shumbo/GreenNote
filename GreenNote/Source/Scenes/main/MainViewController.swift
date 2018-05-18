@@ -20,7 +20,7 @@ private struct Document: Codable {
     var content: String
 }
 
-class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
+class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler, UIScrollViewDelegate {
     private let disposeBag = DisposeBag()
     
     private let currentPage: BehaviorSubject<PageType> = BehaviorSubject<PageType>(value: .TOP)
@@ -41,6 +41,7 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         userContentController.add(self, name: "PageType")
         webConfiguration.userContentController = userContentController
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.scrollView.delegate = self
         self.view = webView
     }
     
@@ -114,5 +115,10 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         default:
             break
         }
+    }
+    
+    // Prevent zooming on main webview
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        scrollView.pinchGestureRecognizer?.isEnabled = false
     }
 }
