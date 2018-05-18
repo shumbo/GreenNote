@@ -17,6 +17,10 @@
   height: inherit;
 }
 
+[class$="-apps"], [class*="-apps "] {
+  display: none;
+}
+
 // Hide message to install extension
 [data-name="extensionSafari"] {
   display: none;
