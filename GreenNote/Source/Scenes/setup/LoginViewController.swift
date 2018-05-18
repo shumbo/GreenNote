@@ -40,15 +40,17 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
-    }
-    
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         if webView.url?.absoluteString == "https://app.grammarly.com/" {
-            self.parent?.dismiss(animated: true, completion: nil)
-            UserDefaults.standard.set(true, forKey: Constants.Defaults.isLoggedIn.rawValue)
-            let mainSB = UIStoryboard(name: "main", bundle: nil)
-            guard let vc = mainSB.instantiateInitialViewController() else { return }
-            UIApplication.shared.keyWindow?.rootViewController = vc
+            let alert = UIAlertController(title: "Logging in...", message: nil, preferredStyle: .alert)
+            present(alert, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.parent?.dismiss(animated: true, completion: nil)
+                UserDefaults.standard.set(true, forKey: Constants.Defaults.isLoggedIn.rawValue)
+                let mainSB = UIStoryboard(name: "main", bundle: nil)
+                guard let vc = mainSB.instantiateInitialViewController() else { return }
+                UIApplication.shared.keyWindow?.rootViewController = vc
+                alert.dismiss(animated: true, completion: nil)
+            }
         }
     }
 }
