@@ -44,6 +44,7 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        webView.scrollView.bounces = false
         webView.customUserAgent = Constants.UserAgent
         webView.navigationDelegate = self
         webView.load(URLRequest(url: URL(string: "https://app.grammarly.com")!))
