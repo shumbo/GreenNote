@@ -29,6 +29,9 @@ $navWidth: 250px;
 [class$="-apps"], [class*="-apps "] {
   display: none;
 }
+[class$="-premium"], [class*="-premium "] {
+  display: none;
+}
 
 // Hide message to install extension
 [data-name="extensionSafari"] {
