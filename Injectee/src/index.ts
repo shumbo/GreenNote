@@ -1,7 +1,7 @@
 import './style.scss';
 
-const $ = document.querySelector;
-const $$ = document.querySelectorAll;
+const $ = (q: string) => document.querySelector(q);
+const $$ = (q: string) => document.querySelectorAll(q);
 
 // Interrupt existing method
 function track(fn: Function, handler: Function) {
@@ -43,13 +43,25 @@ class GreenNoteInjectee {
   }
 
   // Create a new document with text
-  public createDocument(title:string, str: string) {
+  public createDocument(title: string, str: string) {
     window.history.pushState(null, undefined, '/docs/new');
     const editor = $('.ql-editor');
     if (!editor) {
       return;
     }
     editor.innerHTML = str;
+  }
+
+  // Read document
+  public getDocument() {
+    const titleInput = $('[data-name="title-input"]') as HTMLInputElement;
+    const editor = $('.ql-editor');
+    if (!titleInput || !editor) {
+      return;
+    }
+    const title = titleInput.value;
+    const content = editor.innerHTML;
+    return JSON.stringify({ title, content });
   }
 }
 

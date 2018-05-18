@@ -15,6 +15,10 @@ private enum PageType: String {
     case EDITOR
     case OTHER
 }
+private struct Document: Codable {
+    var title: String
+    var content: String
+}
 
 class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
     private let disposeBag = DisposeBag()
@@ -69,6 +73,26 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
+        self.webView.evaluateJavaScript("window.__GreenNote__.getDocument()") { [weak self] (result, error ) in
+            if error != nil {
+                return
+            }
+            guard let str = result as? String else {
+                return
+            }
+            guard let document = try? JSONDecoder().decode(Document.self, from: str.data(using: .utf8)!) else {
+                return
+            }
+            guard let attributedContent = try? NSAttributedString(data: document.content.data(using: .utf8)!, options: [.documentType:NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil) else {
+                return
+            }
+            let activityVC = UIActivityViewController(activityItems: [attributedContent.string], applicationActivities: nil)
+            activityVC.popoverPresentationController?.barButtonItem = sender
+            self?.present(activityVC, animated: true, completion: nil)
+        }
     }
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
