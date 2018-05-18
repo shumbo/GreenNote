@@ -20,7 +20,6 @@
                         <viewLayoutGuide key="safeArea" id="xEh-Sc-7Px"/>
                     </view>
                     <navigationItem key="navigationItem" id="eTP-9t-HbT">
-                        <barButtonItem key="leftBarButtonItem" image="Info" id="WSL-be-cyT"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Asx-JJ-Akf">
                             <connections>
                                 <action selector="shareButtonPressed:" destination="lZN-IH-WZL" id="klb-Z9-46w"/>
@@ -54,7 +53,4 @@
             <point key="canvasLocation" x="-33.453237410071942" y="201.43884892086334"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Info" width="24" height="24"/>
-    </resources>
 </document>
