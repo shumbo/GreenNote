@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import OnePasswordExtension
 
 class LoginViewController: UIViewController, WKNavigationDelegate {
     
@@ -41,6 +42,12 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     // Handle cancel button
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.parent?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func passwordButtonPressed(_ sender: Any) {
+        OnePasswordExtension.shared().fillItem(intoWebView: self.loginWebView, for: self, sender: sender, showOnlyLogins: true) { (success, error) in
+            
+        }
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {

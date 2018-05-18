@@ -66,6 +66,11 @@
                                 <action selector="cancelButtonTapped:" destination="t9u-Mm-6Ex" id="IkP-hv-Srp"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="onepassword-navbar" id="Iaj-lf-XV4">
+                            <connections>
+                                <action selector="passwordButtonPressed:" destination="t9u-Mm-6Ex" id="EG4-c2-vxA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="7Ck-WV-uHa" id="sKT-tA-Wt8"/>
@@ -77,4 +82,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="240.62968515742131"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="onepassword-navbar" width="23" height="23"/>
+    </resources>
 </document>

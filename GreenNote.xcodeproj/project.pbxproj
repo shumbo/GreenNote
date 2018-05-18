@@ -14,6 +14,8 @@
 		2411C70820AC6AAF00D35499 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2411C70720AC6AAF00D35499 /* main.storyboard */; };
 		2411C70A20AC6ABB00D35499 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411C70920AC6ABB00D35499 /* MainViewController.swift */; };
 		2435A6CF20AF200800FA57A8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A6CE20AF200800FA57A8 /* WelcomeViewController.swift */; };
+		2435A6D120AF29E100FA57A8 /* OnePasswordExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2435A6D020AF29E100FA57A8 /* OnePasswordExtension.framework */; };
+		2435A6D320AF2AE300FA57A8 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2435A6D220AF2AE300FA57A8 /* 1Password.xcassets */; };
 		247D0BD720AAC7E700F73900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D0BD620AAC7E700F73900 /* AppDelegate.swift */; };
 		247D0BDE20AAC7E900F73900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDD20AAC7E900F73900 /* Assets.xcassets */; };
 		247D0BE120AAC7E900F73900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247D0BDF20AAC7E900F73900 /* LaunchScreen.storyboard */; };
@@ -29,6 +31,8 @@
 		2411C70720AC6AAF00D35499 /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		2411C70920AC6ABB00D35499 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2435A6CE20AF200800FA57A8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2435A6D020AF29E100FA57A8 /* OnePasswordExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OnePasswordExtension.framework; path = Carthage/Build/iOS/OnePasswordExtension.framework; sourceTree = "<group>"; };
+		2435A6D220AF2AE300FA57A8 /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
 		247D0BD320AAC7E700F73900 /* GreenNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247D0BD620AAC7E700F73900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247D0BDD20AAC7E900F73900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2435A6D120AF29E100FA57A8 /* OnePasswordExtension.framework in Frameworks */,
 				247D0BEF20AACD4E00F73900 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +81,7 @@
 		240874B220AADEC6004F0138 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2435A6D220AF2AE300FA57A8 /* 1Password.xcassets */,
 				247D0BDD20AAC7E900F73900 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -147,6 +153,7 @@
 		247D0BE820AACCE600F73900 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2435A6D020AF29E100FA57A8 /* OnePasswordExtension.framework */,
 				247D0BEE20AACD4E00F73900 /* RxSwift.framework */,
 				247D0BEC20AACD4500F73900 /* RxSwift.framework.dSYM */,
 				247D0BE920AACCE600F73900 /* iOS */,
@@ -216,6 +223,7 @@
 				2411C70820AC6AAF00D35499 /* main.storyboard in Resources */,
 				240874BF20ABEB1A004F0138 /* login.storyboard in Resources */,
 				24F43B5820AD2D7200E50F41 /* bundle.js in Resources */,
+				2435A6D320AF2AE300FA57A8 /* 1Password.xcassets in Resources */,
 				247D0BE120AAC7E900F73900 /* LaunchScreen.storyboard in Resources */,
 				247D0BDE20AAC7E900F73900 /* Assets.xcassets in Resources */,
 				240874B920AB1C71004F0138 /* welcome.storyboard in Resources */,
@@ -232,9 +240,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/OnePasswordExtension.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/OnePasswordExtension.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
