@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="9kh-P1-23C">
             <objects>
-                <viewController id="4hE-rK-4Yh" sceneMemberID="viewController">
+                <viewController id="4hE-rK-4Yh" customClass="WelcomeViewController" customModule="GreenNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZF8-PA-5xo">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhm-X0-zgY">
-                                <rect key="frame" x="167" y="355.5" width="500" height="401"/>
+                                <rect key="frame" x="167" y="336.5" width="500" height="439"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-Xw-Px1">
                                         <rect key="frame" x="152" y="8" width="196" height="196"/>
@@ -26,6 +26,12 @@
                                             <constraint firstAttribute="width" constant="196" id="TLk-YM-Nje"/>
                                             <constraint firstAttribute="height" constant="196" id="n39-PU-Exj"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to GreenNote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bb-eq-Jp2">
                                         <rect key="frame" x="0.0" y="236" width="500" height="41"/>
@@ -51,29 +57,43 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Login to Grammarly"/>
                                         <connections>
-                                            <segue destination="vTO-xd-Syz" kind="presentation" modalPresentationStyle="formSheet" id="HAp-dm-Xj9"/>
+                                            <segue destination="vTO-xd-Syz" kind="presentation" identifier="signin" modalPresentationStyle="formSheet" id="HAp-dm-Xj9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtV-HX-neK">
+                                        <rect key="frame" x="187.5" y="409" width="126" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Ye1-YD-vu9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Create Account"/>
+                                        <connections>
+                                            <segue destination="vTO-xd-Syz" kind="presentation" identifier="signup" id="NIX-7M-SUK"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rtV-HX-neK" secondAttribute="bottom" id="3h8-JO-9vq"/>
                                     <constraint firstItem="gsq-DC-Nnl" firstAttribute="centerX" secondItem="Yhm-X0-zgY" secondAttribute="centerX" id="3zx-MY-qSs"/>
                                     <constraint firstAttribute="trailing" secondItem="ddh-Ue-G6F" secondAttribute="trailing" id="4TO-Ac-pZM"/>
+                                    <constraint firstItem="rtV-HX-neK" firstAttribute="centerX" secondItem="Yhm-X0-zgY" secondAttribute="centerX" id="5Te-1g-zZn"/>
                                     <constraint firstItem="3bb-eq-Jp2" firstAttribute="top" secondItem="7Ag-Xw-Px1" secondAttribute="bottom" constant="32" id="7FF-im-LIs"/>
                                     <constraint firstAttribute="width" constant="500" id="CoH-mG-gKf"/>
                                     <constraint firstAttribute="trailing" secondItem="3bb-eq-Jp2" secondAttribute="trailing" id="EFh-o5-Fpo"/>
-                                    <constraint firstAttribute="bottom" secondItem="gsq-DC-Nnl" secondAttribute="bottom" constant="8" id="JAd-s4-huR"/>
                                     <constraint firstItem="3bb-eq-Jp2" firstAttribute="leading" secondItem="Yhm-X0-zgY" secondAttribute="leading" id="XiQ-Qd-cW2"/>
                                     <constraint firstItem="gsq-DC-Nnl" firstAttribute="top" secondItem="ddh-Ue-G6F" secondAttribute="bottom" constant="8" id="YUs-aL-gPO"/>
                                     <constraint firstItem="7Ag-Xw-Px1" firstAttribute="top" secondItem="Yhm-X0-zgY" secondAttribute="top" constant="8" id="Ycw-PC-wmc"/>
                                     <constraint firstItem="ddh-Ue-G6F" firstAttribute="top" secondItem="3bb-eq-Jp2" secondAttribute="bottom" constant="8" id="fcT-aG-slI"/>
                                     <constraint firstItem="7Ag-Xw-Px1" firstAttribute="centerX" secondItem="Yhm-X0-zgY" secondAttribute="centerX" id="lQT-Di-rzx"/>
                                     <constraint firstItem="ddh-Ue-G6F" firstAttribute="leading" secondItem="Yhm-X0-zgY" secondAttribute="leading" id="tFA-RQ-u55"/>
+                                    <constraint firstItem="rtV-HX-neK" firstAttribute="top" secondItem="gsq-DC-Nnl" secondAttribute="bottom" constant="16" id="wGR-YN-nKf"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Yhm-X0-zgY" firstAttribute="centerX" secondItem="ZF8-PA-5xo" secondAttribute="centerX" id="Ram-xs-9X1"/>
                             <constraint firstItem="Yhm-X0-zgY" firstAttribute="centerY" secondItem="ZF8-PA-5xo" secondAttribute="centerY" id="dkM-H8-UMc"/>
                             <constraint firstItem="Yhm-X0-zgY" firstAttribute="centerX" secondItem="ZF8-PA-5xo" secondAttribute="centerX" id="lYH-Lq-NWp"/>
                         </constraints>
@@ -96,4 +116,7 @@
     <resources>
         <image name="Icon" width="1024" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NIX-7M-SUK"/>
+    </inferredMetricsTieBreakers>
 </document>

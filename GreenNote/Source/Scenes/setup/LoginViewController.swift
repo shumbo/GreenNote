@@ -10,7 +10,13 @@ import UIKit
 import WebKit
 
 class LoginViewController: UIViewController, WKNavigationDelegate {
-
+    
+    enum LoginMode: String {
+        case Signin = "https://www.grammarly.com/signin"
+        case Signup = "https://www.grammarly.com/signup?page=free"
+    }
+    var mode: LoginMode!
+    
     @IBOutlet weak var loginWebView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -20,7 +26,9 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         // Do any additional setup after loading the view.
         loginWebView.customUserAgent = Constants.UserAgent
         loginWebView.navigationDelegate = self
-        loginWebView.load(URLRequest(url: URL(string: "https://www.grammarly.com/signin")!))
+        
+        print(self.mode)
+        loginWebView.load(URLRequest(url: URL(string: mode.rawValue)!))
         
         activityIndicator.hidesWhenStopped = true
     }
@@ -40,7 +48,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
-        if webView.url?.absoluteString == "https://app.grammarly.com/" {
+        if webView.url?.host == "app.grammarly.com" {
             let alert = UIAlertController(title: "Logging in...", message: nil, preferredStyle: .alert)
             present(alert, animated: true, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
