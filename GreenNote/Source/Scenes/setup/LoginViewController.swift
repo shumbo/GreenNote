@@ -13,8 +13,8 @@ import OnePasswordExtension
 class LoginViewController: UIViewController, WKNavigationDelegate {
     
     enum LoginMode: String {
-        case Signin = "https://www.grammarly.com/signin"
-        case Signup = "https://www.grammarly.com/signup?page=free"
+        case SIGNIN = "https://www.grammarly.com/signin"
+        case SIGNUP = "https://www.grammarly.com/signup?page=free"
     }
     var mode: LoginMode!
     
@@ -44,9 +44,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func passwordButtonPressed(_ sender: Any) {
-        OnePasswordExtension.shared().fillItem(intoWebView: self.loginWebView, for: self, sender: sender, showOnlyLogins: true) { (success, error) in
-            
-        }
+        OnePasswordExtension.shared().fillItem(intoWebView: self.loginWebView, for: self, sender: sender, showOnlyLogins: true) { (_, _) in }
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {

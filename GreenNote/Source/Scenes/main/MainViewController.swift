@@ -64,17 +64,14 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         onPageTypeChange(page: self.currentPage) // for the first time
     }
     
-    private func onPageTypeChange(page:PageType){
+    private func onPageTypeChange(page: PageType) {
         switch page {
         case .EDITOR:
             self.shareButton.isEnabled = true
-            break
         case .TOP:
             self.shareButton.isEnabled = false
-            break
         case .OTHER:
             self.shareButton.isEnabled = false
-            break
         }
     }
 
@@ -94,7 +91,7 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
             guard let document = try? JSONDecoder().decode(Document.self, from: str.data(using: .utf8)!) else {
                 return
             }
-            guard let attributedContent = try? NSAttributedString(data: document.content.data(using: .utf8)!, options: [.documentType:NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil) else {
+            guard let attributedContent = try? NSAttributedString(data: document.content.data(using: .utf8)!, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil) else {
                 return
             }
             let activityVC = UIActivityViewController(activityItems: [attributedContent.string], applicationActivities: nil)
@@ -118,7 +115,6 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
             guard let str = message.body as? String else { return }
             guard let nextType = PageType(rawValue: str) else { return }
             self.currentPage = nextType
-            break
         default:
             break
         }

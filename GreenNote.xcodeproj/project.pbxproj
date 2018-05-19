@@ -166,10 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 247D0BE520AAC7E900F73900 /* Build configuration list for PBXNativeTarget "GreenNote" */;
 			buildPhases = (
+				2435A6D620AFF6A000FA57A8 /* Swiftlint */,
 				247D0BCF20AAC7E700F73900 /* Sources */,
 				247D0BD020AAC7E700F73900 /* Frameworks */,
 				247D0BD120AAC7E700F73900 /* Resources */,
-				247D0BEB20AACD2300F73900 /* ShellScript */,
+				247D0BEB20AACD2300F73900 /* Carthage Copy */,
 			);
 			buildRules = (
 			);
@@ -231,7 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		247D0BEB20AACD2300F73900 /* ShellScript */ = {
+		2435A6D620AFF6A000FA57A8 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		247D0BEB20AACD2300F73900 /* Carthage Copy */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,6 +254,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/OnePasswordExtension.framework",
 			);
+			name = "Carthage Copy";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/OnePasswordExtension.framework",
 			);

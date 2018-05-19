@@ -29,11 +29,11 @@ class WelcomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "signup" {
             guard let nav = segue.destination as? UINavigationController, let vc = nav.viewControllers.first as? LoginViewController else { return }
-            vc.mode = .Signup
+            vc.mode = .SIGNUP
         }
         if segue.identifier == "signin" {
             guard let nav = segue.destination as? UINavigationController, let vc = nav.viewControllers.first as? LoginViewController else { return }
-            vc.mode = .Signin
+            vc.mode = .SIGNIN
         }
     }
 
