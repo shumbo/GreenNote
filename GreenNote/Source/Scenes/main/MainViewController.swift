@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import RxSwift
 
 private enum PageType: String {
     case TOP
@@ -21,9 +20,17 @@ private struct Document: Codable {
 }
 
 class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler, UIScrollViewDelegate {
-    private let disposeBag = DisposeBag()
     
-    private let currentPage: BehaviorSubject<PageType> = BehaviorSubject<PageType>(value: .TOP)
+    private var _currentPage: PageType = .TOP
+    private var currentPage: PageType {
+        get {
+            return self._currentPage
+        }
+        set(nextType) {
+            self._currentPage = nextType
+            self.onPageTypeChange(page: nextType)
+        }
+    }
 
     var webView: WKWebView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
@@ -54,21 +61,21 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         webView.navigationDelegate = self
         webView.load(URLRequest(url: URL(string: "https://app.grammarly.com")!))
         
-        
-        currentPage.subscribe { e in
-            guard let page: PageType = e.element else { return }
-            switch page {
-            case .EDITOR:
-                self.shareButton.isEnabled = true
-                break
-            case .TOP:
-                self.shareButton.isEnabled = false
-                break
-            case .OTHER:
-                self.shareButton.isEnabled = false
-                break
-            }
-        }.disposed(by: self.disposeBag)
+        onPageTypeChange(page: self.currentPage) // for the first time
+    }
+    
+    private func onPageTypeChange(page:PageType){
+        switch page {
+        case .EDITOR:
+            self.shareButton.isEnabled = true
+            break
+        case .TOP:
+            self.shareButton.isEnabled = false
+            break
+        case .OTHER:
+            self.shareButton.isEnabled = false
+            break
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,7 +117,7 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         case "PageType":
             guard let str = message.body as? String else { return }
             guard let nextType = PageType(rawValue: str) else { return }
-            self.currentPage.onNext(nextType)
+            self.currentPage = nextType
             break
         default:
             break
