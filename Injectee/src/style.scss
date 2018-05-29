@@ -15,9 +15,6 @@ $navWidth: 250px;
 #page {
   overflow: hidden;
 }
-[class$="-main"], [class*="-main "]:not([data-name="editor-main-menu"]) {
-  height: inherit;
-}
 
 [class$="-main"], [class*="-main "][data-name="editor-main-menu"] {
   padding-left: 30px;

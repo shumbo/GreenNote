@@ -56,6 +56,8 @@ class MainViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.isTranslucent = false
+        
         webView.scrollView.bounces = false
         webView.customUserAgent = Constants.UserAgent
         webView.navigationDelegate = self
